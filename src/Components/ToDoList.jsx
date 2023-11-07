@@ -25,7 +25,7 @@ export default function ToDOList() {
   }
   const listArrayHandler=()=>{    // for adding elements to list //CREATE
     if(inputText && toggleSubmit){
-        const listItem={id:new Date().getTime().toString(),name:list}
+        const listItem={id:new Date().getTime().toString(),name:inputText}
         setListArray(prevArray=>[...prevArray,listItem]);
        
     }else if(inputText && !toggleSubmit){    //  UPDATE
