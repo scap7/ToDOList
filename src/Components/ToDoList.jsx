@@ -31,7 +31,7 @@ export default function ToDOList() {
     }else if(inputText && !toggleSubmit){    //  UPDATE
            setListArray(listArray.map(e=>{
             if(e.id===isEditElement){
-                return {...e,name:list};
+                return {...e,name:inputText};
             }
             return e;
            })) 
