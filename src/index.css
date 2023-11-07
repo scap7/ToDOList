@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+
+}
+
+.container {
+  height: 100vh;
+  padding: 20px 0px;
+}
+
+.todolist-container {
+  text-align: center;
+  font-size: larger;
+  height: 86vh;
+  max-width: 30vw;
+  border: 2px solid transparent;
+  box-shadow: lightgrey 8px 6px 11px;
+  margin: 0px auto;
+}
+
+.todolist-container:hover {
+  box-shadow: grey 0 0 11px;
+
+  transition: all ease-in-out 0.3s;
+}
+
+.title {
+  color: #030376;
+
+}
+
+.underline {
+  background-color: #119999;
+  height: 2px;
+  width: 4rem;
+  margin: auto;
+}
+ol{
+  list-style: none;
+}
+
+.top-input {
+  outline: none;
+  border: none;
+  margin: 1rem 0;
+  width: 70%;
+  height: 25px;
+  text-align: center;
+  font-size: larger;
+}
+.input-container{
+  font-size: larger;
+}
+.input-container button{
+  border: none;
+  font-size: larger;
+  background-color: inherit;
+  
+}
+.list-element{
+  display:flex;
+  gap:1rem;
+  border:2px solid #030376;
+  border-radius: .5rem;
+}
+.list-element button{
+  border:none;
+  background-color: inherit;
+  font-size: larger;
+ 
+}
+.list-element h3:first-child{
+ margin-right:auto;
+}
