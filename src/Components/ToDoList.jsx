@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ListElement from "./ListElement";
 import {RiAddCircleLine} from "react-icons/ri";
 import {FaRegEdit} from "react-icons/fa";
+
+const getLSList=()=>{
+    const LSList=localStorage.getItem("list");
+    
+    if(LSList){
+        return JSON.parse(LSList);
+    }
+    
+  }
 export default function ToDOList() {
     const [inputText,setInputText]=React.useState("");
-    const [listArray,setListArray]=React.useState([]);
+    const [listArray,setListArray]=React.useState(getLSList());
     const[list,setList]=React.useState(null  );
     const[toggleSubmit,setToggleSubmit]=React.useState(true);
     const[isEditElement,setIsEditElement]=React.useState(null);
@@ -13,17 +22,22 @@ export default function ToDOList() {
      setInputText(e.target.value);
   }
   const listArrayHandler=()=>{
-    if(list!=null){
+    if(inputText && toggleSubmit){
         const listItem={id:new Date().getTime().toString(),name:list}
         setListArray(prevArray=>[...prevArray,listItem]);
        
-    }else if(inputText&& !toggleSubmit){
+    }else if(inputText && !toggleSubmit){
            setListArray(listArray.map(e=>{
             if(e.id===isEditElement){
-                return {...e,name:inputText};
+                return {...e,name:list};
             }
             return e;
            })) 
+            setToggleSubmit(true);
+           
+            setIsEditElement(null);
+           
+
     }else{
         alert("add element first")
     }
@@ -42,6 +56,11 @@ export default function ToDOList() {
      setInputText(newEditElement.name);
      setIsEditElement(id);
   }
+  useEffect(()=>{
+    localStorage.setItem("list",JSON.stringify(listArray));
+  }   
+  ,[listArray])
+  
 
     return (
         <div className="todolist-container">
