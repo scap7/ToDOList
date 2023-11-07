@@ -8,6 +8,8 @@ const getLSList=()=>{
     
     if(LSList){
         return JSON.parse(LSList);
+    }else{
+      return  [];
     }
     
   }
