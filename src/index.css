@@ -18,17 +18,25 @@ body {
   text-align: center;
   font-size: larger;
   height: 86vh;
+  min-height: 505px;
   max-width: 30vw;
+  min-width: 173px;
   border: 2px solid transparent;
-  box-shadow: lightgrey 8px 6px 11px;
+  box-shadow: rgb(231, 153, 58) 0 0 11px;
   margin: 0px auto;
+  padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #e5983c;
 }
 
 .todolist-container:hover {
-  box-shadow: grey 0 0 11px;
+  box-shadow: rgb(188, 106, 7) 0 0 15px 10px;
 
   transition: all ease-in-out 0.3s;
 }
+
 
 .title {
   color: #030376;
@@ -39,12 +47,23 @@ body {
   background-color: #119999;
   height: 2px;
   width: 4rem;
-  margin: auto;
+  margin: 0px auto;
 }
-ol{
-  list-style: none;
+/*input wrapper container at top */
+.input-container{
+  font-size: larger;
 }
-
+.input-container button{
+  border: none;
+  
+  font-size: larger;
+  background-color: inherit;
+  
+}
+.input-container button:hover{
+ color:green;
+}
+/*text input at top*/
 .top-input {
   outline: none;
   border: none;
@@ -53,21 +72,26 @@ ol{
   height: 25px;
   text-align: center;
   font-size: larger;
-}
-.input-container{
-  font-size: larger;
-}
-.input-container button{
-  border: none;
-  font-size: larger;
   background-color: inherit;
-  
 }
+/*list*/
+ol{
+  list-style: none;
+  max-height: 319px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+
+
 .list-element{
   display:flex;
   gap:1rem;
   border:2px solid #030376;
   border-radius: .5rem;
+}
+.list-element:hover{
+  background-color:  #d17c15;
 }
 .list-element button{
   border:none;
@@ -75,6 +99,24 @@ ol{
   font-size: larger;
  
 }
+.list-element button:nth-child(2):hover{
+  color:red;
+  
+}
 .list-element h3:first-child{
  margin-right:auto;
+}
+/*clear list button*/
+.clear-btn{
+  padding:.5rem 2rem;
+  background-color:#9191d5 ;
+   border:2px solid black ;
+  border-radius: 1rem ;
+}
+.clear-btn:hover{
+  background-color:#7676d7;
+ 
+}
+.clear-btn:last-child{
+  margin-top: auto;
 }
